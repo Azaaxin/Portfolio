@@ -1,6 +1,7 @@
 <?php
 include "php/sql.php";
 $number = array(0, 1, 2, 3);
+$error = "There is something missing here, sorry :c";
 ?>
 
 <html>
@@ -106,7 +107,7 @@ $number = array(0, 1, 2, 3);
                                                 echo $row["title"];
                                             }
                                         } else {
-                                            echo $error;
+                                            echo $error; 
                                         }
                             
                                     ?>
