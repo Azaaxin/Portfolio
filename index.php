@@ -57,6 +57,11 @@ $error = "There is something missing here, sorry :c";
                             Projects
                             </div>
                     </a>
+                    <td valign="bottom">
+                        <a class="text login-text" style="display: none;">
+                            Login
+                        </a>
+                    </td>
                 </nav>
                 </center>
 
@@ -86,8 +91,8 @@ $error = "There is something missing here, sorry :c";
                             
                                     ?>
                                     </p>
-                                    <div class="btn">
-                                        View my stuff
+                                    <div class="button_style">
+                                        View my work
                                     </div>
                                 </div>
                         
