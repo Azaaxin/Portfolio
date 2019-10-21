@@ -5,10 +5,10 @@ $password = "Lodjur9898Skrillex9898";
 $dbname = "portfolio";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
+if ($conn->connect_error) { //TestTest
     die("Connection failed: " . $conn->connect_error);
 } */
-?>zxzxz
+?>
 
 <?php
    define('DB_SERVER', 'localhost');
