@@ -64,7 +64,7 @@ $error = "There is something missing here, sorry :c";
                     </a>
                     <div id="container_1">
                         <a class="text login-text" id="login" style="display: none;">
-                            Login
+                             Login
                         </a>
                     </div>
                 </nav>
@@ -130,7 +130,7 @@ $error = "There is something missing here, sorry :c";
                                 <div id="error-message" class="middle-object-text">
                                     
                                 <p><?php 
-                                        $x=x+1;
+                                        
                                         $sql = "SELECT * FROM content WHERE id='3';";
                                         $result = mysqli_query($conn, $sql);
                                     
@@ -162,7 +162,7 @@ $error = "There is something missing here, sorry :c";
                                                 echo $row["title"];
                                             }
                                         } else {
-                                            echo $error;
+                                             echo $error;
                                         }
                             
                                     ?>
