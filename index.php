@@ -1,5 +1,6 @@
 <?php
-include "php/sql.php";
+include "php/functions_sql.php";
+include "php/authenticator.php";
 $number = array(0, 1, 2, 3);
 $error = "There is something missing here, sorry :c";
 ?>
@@ -21,6 +22,10 @@ $error = "There is something missing here, sorry :c";
         <meta name=viewport content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style/animation.css">
         <link rel="stylesheet" type="text/css" href="style/main.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/portfolio/images/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/portfolio/images/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/portfolio/images/icons/favicon-16x16.png">
+        <link rel="manifest" href="/portfolio/images/icons/site.webmanifest">
     </head>
         
     
@@ -57,11 +62,11 @@ $error = "There is something missing here, sorry :c";
                             Projects
                             </div>
                     </a>
-                    <td valign="bottom">
-                        <a class="text login-text" style="display: none;">
+                    <div id="container_1">
+                        <a class="text login-text" id="login" style="display: none;">
                             Login
                         </a>
-                    </td>
+                    </div>
                 </nav>
                 </center>
 
@@ -74,8 +79,8 @@ $error = "There is something missing here, sorry :c";
                             <div id="stars3"></div>
                             <div class="overlay">
                                 <div id="error-message" class="middle-object-text">
-                                    <p>
-                                    <?php 
+                                    
+                                    <p><?php 
                                         $x=x+1;
                                         $sql = "SELECT * FROM content WHERE id='1';";
                                         $result = mysqli_query($conn, $sql);
@@ -91,8 +96,8 @@ $error = "There is something missing here, sorry :c";
                             
                                     ?>
                                     </p>
-                                    <div class="button_style">
-                                        View my work
+                                    <div class="button_style" onclick="window.location.href='#projects'">
+                                       View my work
                                     </div>
                                 </div>
                         
@@ -100,8 +105,8 @@ $error = "There is something missing here, sorry :c";
                                 <div class="overlay">
                             <div class="grad content_boxes counter" id="me">
                                 <div id="error-message" class="middle-object-text">
-                                    <p>
-                                    <?php 
+                                    
+                                <p><?php 
                                         $x=x+1;
                                         $sql = "SELECT * FROM content WHERE id='2';";
                                         $result = mysqli_query($conn, $sql);
@@ -123,8 +128,8 @@ $error = "There is something missing here, sorry :c";
                             
                             <div class="content_boxes counter" id="linkedin">
                                 <div id="error-message" class="middle-object-text">
-                                    <p>
-                                    <?php 
+                                    
+                                <p><?php 
                                         $x=x+1;
                                         $sql = "SELECT * FROM content WHERE id='3';";
                                         $result = mysqli_query($conn, $sql);
