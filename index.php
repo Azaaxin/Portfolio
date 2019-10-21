@@ -64,7 +64,12 @@ $error = "There is something missing here, sorry :c";
                     </a>
                     <div id="container_1">
                         <a class="text login-text" id="login" style="display: none;">
-                             Login
+                        <?php if(!$_SESSION["login_user"]){
+                            echo "Login";
+                        }else{
+                            echo "Logout";
+                        }
+                        ?>
                         </a>
                     </div>
                 </nav>

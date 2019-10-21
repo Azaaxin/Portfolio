@@ -75,9 +75,15 @@ input[type=submit]:active {
 }
 
 </style>
-<h3> Login </h3>
-<form action="" method="post">
-  <input type="text" class="invisible" placeholder="Username" name="user" autofocus>
-  <input type="password" class="invisible" placeholder="Password" name="pass">
-  <input type="submit" value="Login">
-</form>
+<?php if($_SESSION["login_user"] === NULL){
+        echo '<h3> Login </h3>
+        <form action="" method="post">
+          <input type="text" class="invisible" placeholder="Username" name="user" autofocus>
+          <input type="password" class="invisible" placeholder="Password" name="pass">
+          <input type="submit" value="Login">
+        </form>';
+      }else{
+        echo "Successfully logged out!";
+        session_destroy();
+      }
+?>
