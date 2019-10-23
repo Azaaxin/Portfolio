@@ -1,0 +1,19 @@
+/* LESS Document */
+
+
+
+.random(@min, @max) {
+  @random: `Math.round(Math.random() * (@{max} - @{min}) + @{min})`;
+}
+
+.random2(@min, @max) {
+  @random2: `Math.round(Math.random() * (@{max} - @{min}) + @{min})`;
+}
+
+
+div {
+  .random(-100, 100);
+	.random2(-100, 100);
+  box-shadow: ~'@{random}px' ~'@{random2}px'  #FFF;
+}
+
