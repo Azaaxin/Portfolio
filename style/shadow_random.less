@@ -1,19 +1,20 @@
-/* LESS Document */
+.repeat(@char, @i) when (@i> 0) {
+   .repeat(@char, (@i - 1)); 
+  .random(@min, @max) {
+   @random: `Math.round(Math.random() * (@{max} - @{min}) + @{min})`;
+ }
+
+ .random2(@min, @max) {
+   @random2: `Math.round(Math.random() * (@{max} - @{min}) + @{min})`;
+ }
 
 
-
-.random(@min, @max) {
-  @random: `Math.round(Math.random() * (@{max} - @{min}) + @{min})`;
+ div {
+   .random(-100, 100);
+ 	.random2(-100, 100);
+   box-shadow: ~'@{random}px' ~'@{random2}px'  #FFF;
+ }
 }
 
-.random2(@min, @max) {
-  @random2: `Math.round(Math.random() * (@{max} - @{min}) + @{min})`;
-}
 
-
-div {
-  .random(-100, 100);
-	.random2(-100, 100);
-  box-shadow: ~'@{random}px' ~'@{random2}px'  #FFF;
-}
-
+  .repeat("-" ,30);
