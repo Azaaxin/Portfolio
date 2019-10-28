@@ -7,8 +7,8 @@ $(document).ready(function(){
          if($(".mousedect:hover, .invert_effect:hover, .text:hover").length != 0){
             
             for (var u=0;u<5;u+=1){
-                $(disabled[u]).fadeIn();
-                disabled[u].style.display = 'block';
+            $(disabled[u]).fadeIn();
+            disabled[u].style.display = 'block';
             }
         } else{
 
