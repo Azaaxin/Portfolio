@@ -15,8 +15,7 @@
     box-shadow: 1px 1px 5px 0px #000000a8;
     /* border: 2px solid white; */
     color: #ffffff;
-    
-    
+
 
 }
 .invisible {
