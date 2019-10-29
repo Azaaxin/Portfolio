@@ -7,9 +7,10 @@ $(document).ready(function(){
          if($(".mousedect:hover, .invert_effect:hover, .text:hover").length != 0){
             
             for (var u=0;u<5;u+=1){
-            $(disabled[u]).fadeIn();
-            disabled[u].style.display = 'block';
+                $(disabled[u]).fadeIn();
+                disabled[u].style.display = 'block';
             }
+           
         } else{
 
             for (var i=0;i<5;i+=1){
@@ -19,3 +20,23 @@ $(document).ready(function(){
         }
     });
 });
+
+$("#login").click(function(){
+    if($(".login").length){
+        
+    }else{
+        $(document.body).prepend('<div class="login" style=""></div>');
+        $(".login").load('/portfolio/php/login.php');
+            $(".snapper").css("background-color", "#000000");
+            $("#matrix-effect").css("opacity", "0");
+        
+    }
+    
+});
+
+$(".snapper").click(function(){
+   // $( ".login" ).remove();
+    $( ".login" ).fadeOut(200, function(){ $(this).remove();});
+    $(".snapper").css("background-color", "");
+    $("#matrix-effect").css("opacity", "0.4")
+})

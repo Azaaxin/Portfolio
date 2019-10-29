@@ -3,6 +3,16 @@ include "php/functions_sql.php";
 include "php/authenticator.php";
 $number = array(0, 1, 2, 3);
 $error = "There is something missing here, sorry :c";
+if (isset($_POST['title_main'])){
+    $payload_value = $_POST['title_main'];
+    $payload_sql = "UPDATE `content` SET title='$payload_value' WHERE id='1'";
+    
+    if ($conn->query($payload_sql) === FALSE) {
+        echo "Error updating record: " . $conn->error;
+    }
+    
+    $conn->close();
+}
 ?>
 
 <html>
@@ -69,12 +79,12 @@ $error = "There is something missing here, sorry :c";
                     <div id="container_1">
                         <a class="text login-text" id="login" style="display: none;">
                             <?php if(!$_SESSION["login_user"]){
-                            echo "Login";
+                            echo "Login</a>";
                         }else{
-                            echo "Logout";
+                            echo "<a class='text login-text' href='php/logout.php'>Logout</a>";
                         }
                         ?>
-                        </a>
+                        
                     </div>
                 </nav>
             
@@ -92,19 +102,24 @@ $error = "There is something missing here, sorry :c";
                     <div id="matrix-effect"></div>
                         <div id="error-message" class="middle-object-text">
                             <p><?php 
-
                                     $sql = "SELECT * FROM content WHERE id='1';";
                                     $result = mysqli_query($conn, $sql);
-                                        
-                                    if (mysqli_num_rows($result) > 0) {
-                                    // output data of each row
-                                    while($row = mysqli_fetch_assoc($result)) {
-                                        echo $row["title"];
-                                    }
-                                    } else {
-                                        echo $error;
-                                    }
-                                
+                                    
+                                        if(!$_SESSION["login_user"] == "Cmeducations"){    
+                                            if (mysqli_num_rows($result) > 0) {
+                                                while($row = mysqli_fetch_assoc($result)) {
+                                                    echo $row["title"];
+                                                    $placeholder = $row["title"];
+                                                }
+                                            } else {
+                                                echo $error;
+                                            }
+                                        } else {
+                                            while($Prow = mysqli_fetch_assoc($result)) {
+                                                $placeholder = $Prow["title"];
+                                            }
+                                            echo "<form action='" . $_SERVER['PHP_SELF'] . "' method='post' enctype='multipart/form-data' name='form1'><input autocomplete='off' class='admin_input'value='" . $_POST['title_main'] . "' onchange='this.form.submit();' placeholder='" . $placeholder . "' name='title_main'> </form>";
+                                        }
                                 ?>
                             </p>
                             <div class="button_style" onclick="window.location.href='#projects'">
