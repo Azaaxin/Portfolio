@@ -1,3 +1,21 @@
+/*
+$(function () {
+    
+    $('.snapper').scroll(function() {    
+      //  var scroll = $('.very-top').scrollTop();
+        var scroll = document.getElementsByClassName(".snapper").scrollTop;
+        document.getElementById("debug").innerHTML = scroll;
+        if (scroll >= 500) {
+        
+            $(".overlay").addClass("overlay-replaced");
+        } else {
+      
+            $(".overlay").removeClass("verlay-replaced");
+        }
+    });
+
+});
+*/
 function scollPos(){
     var elmnt = document.getElementById("h");
     var x = elmnt.scrollLeft;
@@ -18,3 +36,20 @@ function scollPos(){
         }
     }
 }
+$(function() {
+    var psoem = document.getElementById("h");
+    var cookieValue = $.cookie("scrollcookie");
+    if (!!$.cookie('scrollcookie')) {
+        psoem.scrollTop = cookieValue;
+        // have cookie
+    }
+});
+$("form_class").submit(function(e) {
+    var expire = date.setDate(date.getDate() + 1);
+    var psoem = document.getElementById("h");
+    var y = psoem.scrollTop;
+    document.cookie = "scrollcookie=" + y + "; max-age=3600";
+
+    $.cookie("scrollcookie", y, { expires : 1 });
+    
+});
